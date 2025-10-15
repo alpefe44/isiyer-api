@@ -61,11 +61,6 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.atmproject</groupId>
-			<artifactId>atmproje</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
 		    <groupId>me.paulschwarz</groupId>
 		    <artifactId>spring-dotenv</artifactId>
 		    <version>4.0.0</version> 
