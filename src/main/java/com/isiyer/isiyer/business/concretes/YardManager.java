@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.isiyer.isiyer.business.abstracts.YardService;
+import com.isiyer.isiyer.business.requests.CreateYardRequest;
 import com.isiyer.isiyer.business.responses.GetByIdYardResponse;
 import com.isiyer.isiyer.business.responses.JustYardResponse;
 import com.isiyer.isiyer.business.responses.ProductResponse;
@@ -83,6 +84,16 @@ public class YardManager implements YardService {
 
 	        return yardResponses;
 	    }
+
+	 @Override
+	 public void add(CreateYardRequest createYardRequest) {
+		 Yard yard = new Yard(
+		            createYardRequest.getYardName()
+		        );
+		 
+		 this.yardRepository.save(yard);
+		
+	 }
 
 
 }

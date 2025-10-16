@@ -24,5 +24,9 @@ public class Yard {
 	
 	@OneToMany(mappedBy = "yard")
 	List<Product> products;
+
+    public Yard(String yardName) {
+        this.yardName = yardName;
+    }
 	
 }

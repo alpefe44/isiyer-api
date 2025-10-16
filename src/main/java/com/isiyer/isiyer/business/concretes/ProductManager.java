@@ -45,13 +45,20 @@ public class ProductManager implements ProductService {
 	public List<ProductResponse> getProductsByYardId(int yardId) {
 		
 		   List<Product> products = productRepository.findByYard_Id(yardId);
+		   Yard yard = yardRepository.findById(yardId).orElseThrow();
+		   
+		   ProductResponse.YardInfo yardInfo = new ProductResponse.YardInfo(
+		            yard.getId(),
+		            yard.getYardName()
+		    );
 	        
 	       List<ProductResponse> response = products.stream()
 	                .map(product -> new ProductResponse(
 	                        product.getCode(),
 	                        product.getDescription(),
 	                        product.getAmount(),
-	                        product.getUnit(), null))
+	                        product.getUnit(),
+	                        yardInfo))
 	                .collect(Collectors.toList());
 	        
 	        return response;
