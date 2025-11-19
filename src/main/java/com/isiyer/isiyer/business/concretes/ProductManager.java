@@ -32,6 +32,7 @@ public class ProductManager implements ProductService {
 			
 		 Product product = new Product();
 		 product.setCode(dto.getCode());
+		 product.setMalHizmet(dto.getMalHizmet());
 		 product.setDescription(dto.getDescription());
 		 product.setAmount(dto.getAmount());
 		 product.setUnit(dto.getUnit());
@@ -55,6 +56,7 @@ public class ProductManager implements ProductService {
 	       List<ProductResponse> response = products.stream()
 	                .map(product -> new ProductResponse(
 	                        product.getCode(),
+	                        product.getMalHizmet(),
 	                        product.getDescription(),
 	                        product.getAmount(),
 	                        product.getUnit(),

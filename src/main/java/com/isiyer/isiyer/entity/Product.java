@@ -30,6 +30,7 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String code;
+	private String malHizmet;
 	private String description;
 	private int amount;
 	

@@ -10,6 +10,7 @@ import lombok.Data;
 
 public class CreateProductRequest {
 	private String code;
+	private String malHizmet;
 	private String description;
 	private int amount;
 	private Unit unit;

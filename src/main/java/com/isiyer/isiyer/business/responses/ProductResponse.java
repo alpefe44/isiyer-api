@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 public class ProductResponse {
     private String code;
     private String description;
+    private String malHizmet;
     private int amount;
     private Unit unit;
     

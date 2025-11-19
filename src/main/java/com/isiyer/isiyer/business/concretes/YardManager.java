@@ -51,6 +51,7 @@ public class YardManager implements YardService {
 	    List<ProductResponse> productResponses = productEntities.stream()
 	            .map(product -> new ProductResponse(   
 	                    product.getCode(),            
+	                    product.getMalHizmet(),
 	                    product.getDescription(),
 	                    product.getAmount(),
 	                    product.getUnit(), null
@@ -62,12 +63,19 @@ public class YardManager implements YardService {
 	}
 	
 	private YardResponse convertToYardResponse(Yard yard) {
+			
+		    	 ProductResponse.YardInfo yardInfo = new ProductResponse.YardInfo(
+			            yard.getId(),
+			            yard.getYardName()
+			    );
+		
 	        List<ProductResponse> productDtos = yard.getProducts().stream()
 	                .map(product -> new ProductResponse(
 	                        product.getCode(),
+	                        product.getMalHizmet(),
 	                        product.getDescription(),
 	                        product.getAmount(),
-	                        product.getUnit(), null
+	                        product.getUnit(), yardInfo
 	                ))
 	                .collect(Collectors.toList());
 
